@@ -15,7 +15,7 @@ import versioning.VersionUtil
 
 BuildConfig.init(project)
 
-val baseVersion = "0.1.0-alpha.1"
+val baseVersion = "0.1.0-alpha.2"
 group = "ac.grim.grimac"
 version = VersionUtil.computeVersion(project, baseVersion)
 description = "Defender: unofficial GrimAC fork with experimental client intelligence and evidence review."

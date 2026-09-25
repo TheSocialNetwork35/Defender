@@ -142,8 +142,10 @@ bukkit {
     authors = listOf("GrimAC contributors", "Yannis Ress Lasser")
     main = "ac.grim.grimac.platform.bukkit.GrimACBukkitLoaderPlugin"
     website = "https://github.com/TheSocialNetwork35/Defender"
-    apiVersion = "1.13"
-    foliaSupported = true
+    // Defender alpha.2 targets modern servers; older versions are not validated.
+    apiVersion = "1.21.11"
+    // Region-threaded lifecycle/gameplay has not been validated.
+    foliaSupported = false
 
     if (!BuildConfig.shadePE) {
         depend = listOf("packetevents")

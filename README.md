@@ -1,125 +1,39 @@
-<div align="center">
- <h1>GrimAC</h1>
+# Defender
 
- <div>
-  <a href="https://github.com/GrimAnticheat/Grim/actions/workflows/gradle-publish.yml">
-   <img alt="Workflow" src="https://img.shields.io/github/actions/workflow/status/GrimAnticheat/Grim/gradle-publish.yml?style=flat&logo=github"/>
-  </a>&nbsp;&nbsp;
-  <a href="https://modrinth.com/plugin/grimac">
-   <img alt="Modrinth" src="https://img.shields.io/modrinth/v/LJNGWSvH?style=flat&label=version&logo=modrinth">
-  </a>&nbsp;&nbsp;
-  <a href="https://modrinth.com/plugin/grimac#download">
-   <img alt="Downloads" src="https://img.shields.io/modrinth/dt/LJNGWSvH?style=flat&logo=modrinth&label=downloads&link=https%3A%2F%2Fmodrinth.com%2Fplugin%2Fgrimac%23download">
-  </a>&nbsp;&nbsp;
-  <a href="https://discord.grim.ac">
-   <img alt="Discord" src="https://img.shields.io/discord/811396969670901800?style=flat&label=discord&logo=discord">
-  </a>
- </div>
- <br>
-</div>
+**Unofficial, experimental GPL-3.0 fork of [GrimAC](https://github.com/GrimAnticheat/Grim). Not endorsed by the Grim team.**
 
-GrimAC is an open source Minecraft anticheat designed to support the latest versions of Minecraft.
-It currently supports Minecraft versions 1.8–26.2. Geyser players are fully exempt from the anticheat to prevent false positives.
-This project is considered feature-complete for the 2.0 (open-source) branch. If you would like a bug fix or enhancement and cannot sponsor the work, pull requests are welcome.
-A premium version is planned, which will offer additional subscription-based paid checks, such as heuristics.
+Defender adds passive client intelligence, separated identity/behavior risk scoring, bounded incident evidence, diagnostic packet/combat monitoring and admin inspection to Grim. This is an engineering alpha, not a production-ready anticheat release. No detection is a guarantee.
 
-## Downloads
+The 26.3 port originates from Grim's `ver/26.3` branch, pinned in [docs/UPSTREAM_COMMIT.txt](docs/UPSTREAM_COMMIT.txt). Build and test results, including limitations, are in [release/TEST_RESULTS.md](release/TEST_RESULTS.md). Real Vanilla, Fabric and Lunar gameplay and false-positive testing are still required. Fabric is not built in this branch. Do not advertise full 26.3 platform/client compatibility from compilation alone.
 
-- Latest updates:
-  - **[Modrinth](https://modrinth.com/plugin/grimac)** *(recommended)*
-  - GitHub
-  artifacts: [Bukkit](https://nightly.link/GrimAnticheat/Grim/workflows/gradle-publish/2.0/grimac-bukkit.zip), [Fabric](https://nightly.link/GrimAnticheat/Grim/workflows/gradle-publish/2.0/grimac-fabric.zip) *(bleeding edge)*
-- Major releases only:
-  - ~~[Hangar](https://hangar.papermc.io/GrimAnticheat/GrimAnticheat)~~
-  - ~~[SpigotMC](https://www.spigotmc.org/resources/grim-anticheat.99923/)~~
+## Own modules
 
-## Requirements & Installation
+- `defender-core`: independent Java 17-compatible library, partitioned into intelligence, risk, firewall, probe, logging and companion packages.
+- `common/src/main/java/ac/defender/platform`: lifecycle, PacketEvents and Cloud command adapters; no Bukkit world operations on packet threads.
+- `client-signatures.yml`: bounded safe YAML, exact brand/channel matching, atomic reload. Brands and channels are spoofable.
+- Risk aggregation: per-check deduplication, decay, healthy-server gating; identity hints never increase behavioral risk. No Defender autobans.
+- Session evidence: 128 entries, 30-minute retention, optional asynchronous JSONL, seven daily files, hard size/queue caps, visible loss counters. No cross-session tracking by Defender.
+- Diagnostic sustained movement bursts and repeated multiple-target attacks. These remain UNKNOWN review hints because legitimate server mechanics, proxies and batching can resemble cheats.
+- Double-check probe state machine and nonce handshake primitives are unit-tested. Active translation transport and the optional `defender-client` mod are **not shipped**.
 
-- Java 17 or higher. *For more details, see [Updating-to-Java-17](https://github.com/GrimAnticheat/Grim/wiki/Updating-to-Java-17).*
-- A Spigot, Paper, Folia, or Fabric server environment. *For more details, see [Supported-environments](https://github.com/GrimAnticheat/Grim/wiki/Supported-environments).*
+## Build and installation
 
-If you use a proxy such as Velocity or BungeeCord:
-- If you use Geyser, Floodgate must be installed on the backend server (where Grim is) so Grim can access the Floodgate API.
-- If you use ViaVersion, it must be installed on the backend server (where Grim is) ONLY.
-  Grim does not support having ViaVersion installed on the proxy, even if it is also installed on the backend.
+Use JDK 21 for `./gradlew build`. The wrapper downloads Gradle; dependencies come from upstream Maven repositories. Run Minecraft 26.3 on its required Java runtime (upstream run task uses Java 25). The Bukkit shaded artifact includes PacketEvents. Install it on an isolated Paper test server; remove the original Grim plugin first. Back up configuration/worlds. Defender uses its own plugin data folder; Grim checks and commands remain present.
 
-## Resources
+`plugins/Defender/defender/defender.yml` controls Defender logging and diagnostics. `client-signatures.yml` beside it is reloadable with `/defender reload`. The original Grim configuration remains separately configurable. A normal server cannot reliably enumerate arbitrary installed mods. Pure ESP is not detectable through these modules.
 
-- For documentation and examples visit the [Wiki](https://github.com/GrimAnticheat/Grim/wiki).
-- For answers to commonly asked questions visit the [FAQ](https://github.com/GrimAnticheat/Grim/wiki/FAQ).
-- For community support and project discussion join our [Discord](https://discord.grim.ac).
+## Commands
 
-## Pull Requests
+All Defender commands require `defender.admin` (operator by default):
 
-See [Contributing](CONTRIBUTING.md) for more information about contributing and what our guidelines
-are.
+- `/defender inspect <player>`: compact client, protocol, risk and observation counts.
+- `/defender client <player>`: passive identity overview.
+- `/defender evidence <player>` and `/defender history <player>`: last ten observations from the current session, including health context. Not persistent cross-session history.
+- `/defender checkclient <player>`: explicitly reports UNSUPPORTED for active probes; it does not claim a clean client.
+- `/defender reload`: validates and replaces Defender configuration/signatures; leaves old configuration on validation failure. `/grim reload` controls upstream settings.
 
-## Developer Plugin API
+## Attribution and publication
 
-Grim's plugin API allows you to integrate Grim into your own plugins. Visit
-the [plugin API repository](https://github.com/GrimAnticheat/GrimAPI) for the source code and more
-information.
+See [upstream README and credits](docs/UPSTREAM_README.md), [LICENSE](LICENSE), [attribution](release/ATTRIBUTION.md), [exact source changes](release/SOURCE_CHANGES.md), [privacy](release/PRIVACY.md), [feature matrix](release/FEATURE_MATRIX.md), and [manual test checklist](release/MANUAL_TESTS.md).
 
-## Compiling From Source
-
-1. `git clone https://github.com/GrimAnticheat/Grim.git`
-2. `cd Grim`
-3. `./gradlew build`
-4. The final jars will compile into the `<platform>/build/libs` folders
-
-## Grim Supremacy
-
-What makes Grim stand out against other anticheats?
-
-### Movement Simulation Engine
-
-* We have a 1:1 replication of the player's possible movements
-    * This covers everything from basic walking, swimming, knockback, cobwebs, to bubble columns
-    * It even covers riding entities from boats to pigs to striders
-* Built upon covering edge cases to confirm accuracy
-* 1.13+ clients on 1.13+ servers, 1.12- clients on 1.13+ servers, 1.13+ clients on 1.12- servers,
-  and 1.12- clients on 1.12- servers are all supported regardless of the large technical changes
-  between these versions.
-* The order of collisions depends on the client version and is correct
-* Accounts for minor bounding box differences between versions, for example:
-    * Single glass panes will be a + shape for 1.7-1.8 players and * for 1.9+ players
-    * 1.13+ clients on 1.8 servers see the + glass pane hitbox due to ViaVersion
-    * Many other blocks have this extreme attention to detail.
-    * Waterlogged blocks do not exist for 1.12 or below players
-    * Blocks that do not exist in the client's version use ViaVersion's replacement block
-    * Block data that cannot be translated to previous versions is replaced correctly
-    * All vanilla collision boxes have been implemented
-
-### Fully asynchronous and multithreaded design
-
-* All movement checks and the overwhelming majority of listeners run on the Netty thread
-* The anticheat can scale to many hundreds of players, if not more
-* Thread safety is carefully thought out
-* The next core allows for this design
-
-### Full world replication
-
-* The anticheat keeps a replica of the world for each player
-* The replica is created by listening to chunk data packets, block places, and block changes
-* On all versions, chunks are compressed to 16-64 kb per chunk using palettes
-* Using this cache, the anticheat can safely access the world state
-* Per player, the cache allows for multithreaded design
-* Sending players fake blocks with packets is safe and does not lead to falses
-* The world is recreated for each player to allow lag compensation
-* Client sided blocks cause no issues with packet based blocks. Block glitching does not false the
-  anticheat.
-
-### Latency compensation
-
-* World changes are queued until they reach the player
-* This means breaking blocks under a player does not false the anticheat
-* Everything from flying status to movement speed will be latency compensated
-
-### Inventory compensation
-
-* The player's inventory is tracked to prevent ghost blocks at high latency, and other errors
-
-### Secure by design, not obscurity
-
-* All systems are designed to be highly secure and mathematically impossible to bypass
-* For example, the prediction engine knows all possible movements and cannot be bypassed
+Codex generated the new Defender code, tests and release prose. This is disclosed; no AI visual assets were generated. Modrinth acceptance has not been established. The new fork-specific contribution is primarily AI-generated, so the current Modrinth AI rules are a publication blocker requiring review; disclosure alone does not resolve that rule. No Modrinth upload has been made.

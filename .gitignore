@@ -78,3 +78,7 @@ fabric/run/
 
 .ignored/
 /workspace.gradle.kts
+
+# Defender distributable and matching dependency sources
+!/release/*.jar
+!/release/dependency-sources/*.jar

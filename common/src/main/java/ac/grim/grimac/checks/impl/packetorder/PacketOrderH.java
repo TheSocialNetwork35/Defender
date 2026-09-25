@@ -1,8 +1,8 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 package ac.grim.grimac.checks.impl.packetorder;
 
 import ac.grim.grimac.checks.Check;
 import ac.grim.grimac.checks.CheckData;
-import ac.grim.grimac.checks.type.PacketReceiveListener;
 import ac.grim.grimac.checks.type.PostPredictionListener;
 import ac.grim.grimac.checks.type.PreViaPacketReceiveListener;
 import ac.grim.grimac.player.GrimPlayer;

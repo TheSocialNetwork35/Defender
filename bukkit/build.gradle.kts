@@ -1,6 +1,8 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 import net.minecrell.pluginyml.bukkit.BukkitPluginDescription.Permission
 import versioning.BuildConfig
 import java.util.zip.ZipFile
+import java.security.MessageDigest
 
 plugins {
     `maven-publish`
@@ -136,10 +138,10 @@ dependencies {
 }
 
 bukkit {
-    name = "GrimAC"
-    author = "GrimAC"
+    name = "Defender"
+    authors = listOf("GrimAC contributors", "Yannis Ress Lasser")
     main = "ac.grim.grimac.platform.bukkit.GrimACBukkitLoaderPlugin"
-    website = "https://grim.ac/"
+    website = "https://github.com/TheSocialNetwork35/Defender"
     apiVersion = "1.13"
     foliaSupported = true
 
@@ -169,6 +171,10 @@ bukkit {
     )
 
     permissions {
+        register("defender.admin") {
+            description = "Inspect Defender technical evidence and reload signatures"
+            default = Permission.Default.OP
+        }
         register("grim.alerts") {
             description = "Receive alerts for violations"
             default = Permission.Default.OP
@@ -277,6 +283,9 @@ tasks {
     }
 
     shadowJar {
+        from(rootProject.file("LICENSE")) { into("META-INF/defender") }
+        from(rootProject.file("release/ATTRIBUTION.md")) { into("META-INF/defender") }
+        from(rootProject.file("release/third-party-notices")) { into("META-INF/defender/third-party-notices") }
         exclude("META-INF/services/javax.annotation.processing.Processor")
 
         if (!BuildConfig.shadePE) {
@@ -297,5 +306,46 @@ tasks {
         manifest {
             attributes["paperweight-mappings-namespace"] = "mojang"
         }
+    }
+}
+
+// Defender release audit: archive resolved dependency coordinates and exact binary digests.
+tasks.register("defenderDependencyInventory") {
+    dependsOn(":common:jar", ":defender-core:jar")
+    doLast {
+        val output = rootProject.file("release/DEPENDENCIES.tsv")
+        output.parentFile.mkdirs()
+        val digest = MessageDigest.getInstance("SHA-256")
+        output.writeText("coordinate\tfilename\tsha256\n")
+        configurations.runtimeClasspath.get().resolvedConfiguration.resolvedArtifacts
+            .sortedBy { it.moduleVersion.id.toString() }.forEach { artifact ->
+                val hash = digest.digest(artifact.file.readBytes()).joinToString("") { "%02x".format(it) }
+                output.appendText("${artifact.moduleVersion.id}\t${artifact.file.name}\t$hash\n")
+            }
+    }
+}
+
+// Collect corresponding dependency sources for an auditable local release bundle.
+tasks.register("defenderDependencySources") {
+    doLast {
+        val output = rootProject.file("release/dependency-sources")
+        output.mkdirs()
+        val components = configurations.runtimeClasspath.get().incoming.resolutionResult.allComponents
+            .map { it.id }.filterIsInstance<org.gradle.api.artifacts.component.ModuleComponentIdentifier>()
+        val result = dependencies.createArtifactResolutionQuery().forComponents(components)
+            .withArtifacts(org.gradle.jvm.JvmLibrary::class.java, org.gradle.language.base.artifact.SourcesArtifact::class.java)
+            .execute()
+        val report = rootProject.file("release/DEPENDENCY_SOURCES.txt")
+        report.writeText("Resolved source artifacts (missing sources require manual audit):\n")
+        result.resolvedComponents.forEach { component ->
+            component.getArtifacts(org.gradle.language.base.artifact.SourcesArtifact::class.java).forEach { artifact ->
+                if (artifact is org.gradle.api.artifacts.result.ResolvedArtifactResult) {
+                    val id = component.id.displayName.replace(':', '-')
+                    artifact.file.copyTo(output.resolve("$id-sources.jar"), overwrite = true)
+                    report.appendText("OK ${component.id}\n")
+                } else report.appendText("MISSING ${component.id}: $artifact\n")
+            }
+        }
+        result.components.filter { it !is org.gradle.api.artifacts.result.ComponentArtifactsResult }.forEach { report.appendText("UNRESOLVED ${it.id}\n") }
     }
 }

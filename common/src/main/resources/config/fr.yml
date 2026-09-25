@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # Configuration principale de GrimAC
 # Code source : https://github.com/MWHunter/Grim
 # Copyright 2025 DefineOutside et contributeurs, sous licence GPLv3.
@@ -18,7 +19,7 @@ alerts:
 verbose:
     print-to-console: false
 
-check-for-updates: true
+check-for-updates: false
 
 client-brand:
     # Cela signifie qu'il n'enverra pas la nature du client aux opérateurs si il correspond aux clients suivants
@@ -31,7 +32,7 @@ client-brand:
         - "^labymod$"
     # Grim will blacklist specific Forge versions which include built-in Reach hacks (Forge 1.18.2 to 1.19.3).
     # Setting this option to false will allow said clients to connect to the server. Disable this at your own risk.
-    disconnect-blacklisted-forge-versions: true
+    disconnect-blacklisted-forge-versions: false
 
 spectators:
     # Masquer tout les spectateurs ayant la permission grim.spectator, peu importe s'ils sont actuellement en train d'observer.

@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 // Local developer overrides, including private Maven credentials.
 run {
     val userProps = rootDir.resolve("gradle.user.properties")
@@ -72,7 +73,8 @@ if (gradle.startParameter.isBuildScan) {
     }
 }
 
-rootProject.name = "grimac"
+rootProject.name = "defender"
+include("defender-core")
 include("common")
 include("bukkit")
 //include("fabric")

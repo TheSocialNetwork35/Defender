@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 package ac.grim.grimac.platform.bukkit;
 
 import ac.grim.grimac.GrimAPI;
@@ -23,7 +24,6 @@ import ac.grim.grimac.platform.api.player.PlatformPlayerFactory;
 import ac.grim.grimac.platform.api.scheduler.PlatformScheduler;
 import ac.grim.grimac.platform.api.sender.Sender;
 import ac.grim.grimac.platform.api.sender.SenderFactory;
-import ac.grim.grimac.platform.bukkit.initables.BukkitBStats;
 import ac.grim.grimac.platform.bukkit.initables.BukkitEventManager;
 import ac.grim.grimac.platform.bukkit.initables.BukkitLuckPermsInitable;
 import ac.grim.grimac.platform.bukkit.initables.BukkitTickEndEvent;
@@ -87,7 +87,6 @@ public final class GrimACBukkitLoaderPlugin extends JavaPlugin implements Platfo
                 new ExemptOnlinePlayersOnReload(),
                 new BukkitEventManager(),
                 new BukkitTickEndEvent(),
-                new BukkitBStats(),
                 new BukkitLuckPermsInitable(),
                 (StartableInitable) () -> {
                     if (BukkitMessagePlaceHolderManager.hasPlaceholderAPI) {

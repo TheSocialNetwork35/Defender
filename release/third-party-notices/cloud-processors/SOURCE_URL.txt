@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/Incendo/cloud-processors/master/LICENSE
+Retrieved 2026-09-25; see dependency source headers for version-specific copyright.

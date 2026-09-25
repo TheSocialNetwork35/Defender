@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # ===========================================================================
 #  Grim datastore
 #
@@ -18,7 +19,7 @@ database:
 
   # Master toggle. Set false to disable violation history + /grim history
   # entirely. Live AC checks keep running; flags just aren't persisted.
-  enabled: true
+  enabled: false
 
   # Categories → backend ids. Each distinct id here must have a matching
   # `databases/<id>.yml` file (auto-created from bundled defaults on first

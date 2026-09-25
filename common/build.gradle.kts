@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 import versioning.BuildConfig
 
 plugins {
@@ -55,6 +56,7 @@ repositories {
 
 
 dependencies {
+    api(project(":defender-core"))
     // compileOnly, not api: each platform bundles PE via its own JiJ/shade path,
     // so api() here would nest packetevents-api a second time (~4.2MB) in the jars.
     compileOnly(libs.packetevents.api)

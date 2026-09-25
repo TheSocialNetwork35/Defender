@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 package ac.grim.grimac.utils.anticheat;
 
 import ac.grim.grimac.GrimAPI;
@@ -96,6 +97,7 @@ public class PlayerDataManager {
         if (shouldCheck(user)) {
             GrimPlayer player = new GrimPlayer(user);
             playerDataMap.put(user, player);
+            ac.defender.platform.DefenderRuntime.INSTANCE.begin(player);
             Channels.JOIN.fire(player);
         }
     }
@@ -121,6 +123,7 @@ public class PlayerDataManager {
         GrimAPI.INSTANCE.getDataStoreLifecycle().liveWriteHooks()
                 .onQuitFromUserDisconnect(user, grimPlayer, System.currentTimeMillis());
         if (uuid != null) {
+            ac.defender.platform.DefenderRuntime.INSTANCE.forget(uuid);
             GrimAPI.INSTANCE.getDataStoreLifecycle().playerToggleStore().evict(uuid);
         }
 

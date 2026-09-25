@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # ===========================================================================
 #  Datastore do Grim
 #
@@ -21,7 +22,7 @@ database:
   # Chave mestra. Defina como false para desativar o histórico de violações
   # + /grim history por completo. Os checks AC ao vivo continuam rodando;
   # apenas as flags não são persistidas.
-  enabled: true
+  enabled: false
 
   # Categorias → ids de backend. Cada id distinto aqui precisa de um
   # arquivo `databases/<id>.yml` correspondente (criado a partir dos

@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/retrooper/packetevents/8ca0c18b7/LICENSE
+Retrieved 2026-09-25; see dependency source headers for version-specific copyright.

@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 package ac.grim.grimac.manager.config;
 
 import ac.grim.grimac.api.config.ConfigManager;
@@ -76,7 +77,7 @@ public class BaseConfigManager {
         disconnectTimeout = config.getStringElse("disconnect.timeout", "<lang:disconnect.timeout>");
         disconnectClosed = config.getStringElse("disconnect.closed", "<lang:disconnect.timeout>");
         disconnectPacketError = config.getStringElse("disconnect.error", "<red>An error occurred whilst processing packets. Please contact the administrators.");
-        blockBlacklistedForgeClients = config.getBooleanElse("client-brand.disconnect-blacklisted-forge-versions", true);
+        blockBlacklistedForgeClients = config.getBooleanElse("client-brand.disconnect-blacklisted-forge-versions", false);
         disconnectBlacklistedForge = config.getStringElse("disconnect.blacklisted-forge",
                 "<red>Your forge version is blacklisted due to inbuilt reach hacks.<newline><gold>Versions affected: 1.18.2-1.19.3<newline><newline><red>Please see https://github.com/MinecraftForge/MinecraftForge/issues/9309.");
         disablePongCancelling = config.getBooleanElse("disable-pong-cancelling", false);

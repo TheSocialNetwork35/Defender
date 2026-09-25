@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 package ac.grim.grimac.manager;
 
 import ac.grim.grimac.GrimAPI;
@@ -48,6 +49,7 @@ public class InitManager {
                 .add(new PacketManager())
                 .add(new ViaBackwardsManager())
                 .add(new TickRunner())
+                .add(() -> ac.defender.platform.DefenderRuntime.INSTANCE.start())
                 .add(new CommandRegister(GrimAPI.INSTANCE.getCommandService()))
                 .add(new UpdateChecker())
                 .add(new PacketLimiter())
@@ -62,6 +64,7 @@ public class InitManager {
                 .build();
 
         initializersOnStop = ImmutableList.<StoppableInitable>builder()
+                .add(() -> ac.defender.platform.DefenderRuntime.INSTANCE.stop())
                 .add(new TerminatePacketEvents())
                 .add(GrimAPI.INSTANCE.getDataStoreLifecycle())
                 .addAll(extraStoppableInitables)

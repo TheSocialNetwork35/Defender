@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # ===========================================================================
 #  Grim datastore
 #
@@ -21,7 +22,7 @@ database:
   # Hoofdschakelaar. Op false zetten om geschiedenis van overtredingen +
   # /grim history volledig uit te schakelen. Live AC-checks blijven draaien;
   # alleen de flags worden niet meer opgeslagen.
-  enabled: true
+  enabled: false
 
   # Categorieën → backend-ids. Elke unieke id hier moet een bijhorend
   # `databases/<id>.yml` hebben (wordt bij de eerste start uit de meegeleverde

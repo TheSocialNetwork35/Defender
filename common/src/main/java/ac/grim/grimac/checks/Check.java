@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 package ac.grim.grimac.checks;
 
 import ac.grim.grimac.GrimAPI;
@@ -147,6 +148,7 @@ public class Check extends GrimProcessor implements AbstractCheck {
         player.punishmentManager.handleViolation(this);
         lastViolationTime = System.currentTimeMillis();
         violations++;
+        ac.defender.platform.DefenderRuntime.INSTANCE.grimFlag(player, this);
         return true;
     }
 
@@ -163,6 +165,7 @@ public class Check extends GrimProcessor implements AbstractCheck {
         player.punishmentManager.handleViolation(this);
         lastViolationTime = System.currentTimeMillis();
         violations++;
+        ac.defender.platform.DefenderRuntime.INSTANCE.grimFlag(player, this);
         GrimAPI.INSTANCE.getDataStoreLifecycle().liveWriteHooks()
                 .recordFlagDataFromCheck(player, this, violations, verboseData);
         return true;

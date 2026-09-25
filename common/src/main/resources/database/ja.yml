@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # ===========================================================================
 #  Grim データストア
 #
@@ -20,7 +21,7 @@ database:
   # マスタートグル。false にすると違反履歴と /grim history が完全に無効に
   # なります。ライブの AC チェックはそのまま動きますが、フラグが永続化
   # されなくなります。
-  enabled: true
+  enabled: false
 
   # カテゴリ → バックエンド ID。ここに現れる各 ID は対応する
   # `databases/<id>.yml`（初回起動時に同梱デフォルトから自動生成）と、

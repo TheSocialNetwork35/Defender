@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # ===========================================================================
 #  Datastore di Grim
 #
@@ -21,7 +22,7 @@ database:
   # Interruttore principale. Imposta false per disattivare completamente la
   # cronologia delle violazioni + /grim history. I check AC live continuano
   # a girare; i flag semplicemente non vengono persistiti.
-  enabled: true
+  enabled: false
 
   # Categorie → id di backend. Ogni id distinto qui deve avere un file
   # `databases/<id>.yml` corrispondente (creato in automatico dai default

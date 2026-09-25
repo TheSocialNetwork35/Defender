@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 /**
  *          GrimAC Build Configuration
  *
@@ -14,16 +15,16 @@ import versioning.VersionUtil
 
 BuildConfig.init(project)
 
-val baseVersion = "2.3.74"
+val baseVersion = "0.1.0-alpha.1"
 group = "ac.grim.grimac"
 version = VersionUtil.computeVersion(project, baseVersion)
-description = "Libre simulation anticheat designed for 26.2 with 1.8–26.2 support, powered by PacketEvents 2.0."
+description = "Defender: unofficial GrimAC fork with experimental client intelligence and evidence review."
 
 ext["timestamp"] = System.currentTimeMillis().toString()
 ext["git_branch"] = VersionUtil.getGitBranch(project, true)
 ext["git_commit"] = VersionUtil.getGitCommitHash(project, true)
-ext["git_org"] = System.getenv("GRIM_GIT_ORG") ?: VersionUtil.getGitUser(project)
-ext["git_repo"] = System.getenv("GRIM_GIT_REPO") ?: "Grim"
+ext["git_org"] = System.getenv("GRIM_GIT_ORG") ?: "TheSocialNetwork35"
+ext["git_repo"] = System.getenv("GRIM_GIT_REPO") ?: "Defender"
 
 println("Build configuration:")
 println("    shadePE            = ${BuildConfig.shadePE}")

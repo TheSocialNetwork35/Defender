@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # config.yml - GrimAC 主要配置
 # 源代码链接: https://github.com/MWHunter/Grim
 # 版权所有 © 2025 DefineOutside 及贡献者 / 遵循 GPLv3 开源协议
@@ -19,7 +20,7 @@ verbose:
     # 是否在控制台中打印verbose信息
     print-to-console: false
 # 是否检查更新
-check-for-updates: true
+check-for-updates: false
 
 client-brand:
     # 这意味着如果客户端型号匹配以下正则表达式，它将不会将其客户端版本显示在聊天栏中
@@ -32,7 +33,7 @@ client-brand:
         - "^labymod$"
     # Grim 将把包含内置攻击距离修改功能的特定 Forge 版本列入黑名单（Forge 1.18.2 至 1.19.3） 可能会导致1.18.2-1.19.3的Forge版本玩家无法进入服务器。
     # 将此选项设置为 false 将允许上述客户端连接服务器。禁用此选项需自行承担风险（建议打开）。
-    disconnect-blacklisted-forge-versions: true
+    disconnect-blacklisted-forge-versions: false
 
 spectators:
     # 将拥有 grim.spectator 权限的人进行隐藏,不管他是否在观察玩家

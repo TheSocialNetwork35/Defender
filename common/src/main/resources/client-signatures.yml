@@ -1,0 +1,82 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Spoofable hints; exact matching; max confidence 0.6; no commands or penalties.
+schema: 1
+signatures:
+  - id: brand.vanilla
+    source: BRAND
+    value: "vanilla"
+    label: "Vanilla"
+    category: CLIENT
+    confidence: 0.3
+  - id: brand.fabric
+    source: BRAND
+    value: "fabric"
+    label: "Fabric"
+    category: MOD_LOADER
+    confidence: 0.3
+  - id: brand.forge
+    source: BRAND
+    value: "forge"
+    label: "Forge"
+    category: MOD_LOADER
+    confidence: 0.3
+  - id: brand.neoforge
+    source: BRAND
+    value: "neoforge"
+    label: "NeoForge"
+    category: MOD_LOADER
+    confidence: 0.3
+  - id: brand.quilt
+    source: BRAND
+    value: "quilt"
+    label: "Quilt"
+    category: MOD_LOADER
+    confidence: 0.3
+  - id: brand.lunarclient
+    source: BRAND
+    value: "lunarclient"
+    label: "Lunar Client"
+    category: CLIENT
+    confidence: 0.3
+  - id: brand.badlion
+    source: BRAND
+    value: "badlion"
+    label: "Badlion"
+    category: CLIENT
+    confidence: 0.3
+  - id: brand.labymod
+    source: BRAND
+    value: "labymod"
+    label: "LabyMod"
+    category: CLIENT
+    confidence: 0.3
+  - id: brand.meteor
+    source: BRAND
+    value: "meteor"
+    label: "Meteor (self-reported)"
+    category: CLIENT
+    confidence: 0.3
+  - id: brand.wurst
+    source: BRAND
+    value: "wurst"
+    label: "Wurst (self-reported)"
+    category: CLIENT
+    confidence: 0.3
+  - id: channel.fabric
+    source: CHANNEL
+    value: "fabric:registry/sync"
+    label: "Fabric-compatible channel"
+    category: MOD_LOADER
+    confidence: 0.25
+  - id: channel.fml
+    source: CHANNEL
+    value: "fml:handshake"
+    label: "Forge-compatible channel"
+    category: MOD_LOADER
+    confidence: 0.25
+  - id: channel.labymod3
+    source: CHANNEL
+    value: "labymod3:main"
+    label: "LabyMod-compatible channel"
+    category: CLIENT
+    confidence: 0.25

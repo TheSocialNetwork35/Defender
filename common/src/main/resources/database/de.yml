@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # ===========================================================================
 #  Grim-Datenspeicher
 #
@@ -21,7 +22,7 @@ database:
   # Hauptschalter. Auf false setzen, um Verstoßhistorie + /grim history
   # komplett zu deaktivieren. Live-AC-Checks laufen weiter; Flags werden
   # nur nicht mehr persistiert.
-  enabled: true
+  enabled: false
 
   # Kategorien → Backend-IDs. Jede hier verwendete ID braucht eine
   # passende `databases/<id>.yml` (wird beim ersten Start aus den

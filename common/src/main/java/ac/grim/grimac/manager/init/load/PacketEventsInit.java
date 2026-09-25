@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 package ac.grim.grimac.manager.init.load;
 
 import ac.grim.grimac.utils.anticheat.LogUtil;
@@ -31,6 +32,7 @@ public class PacketEventsInit implements LoadableInitable {
                 .kickOnPacketException(true)
 //                .preViaInjection(true)
                 .checkForUpdates(false)
+                .bStats(false)
                 .reEncodeByDefault(false)
                 .debug(false);
         PacketEvents.getAPI().load();

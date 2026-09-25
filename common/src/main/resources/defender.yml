@@ -1,0 +1,6 @@
+# Defender modules only. No automatic punishments or remote telemetry.
+# Local JSONL contains random session IDs and technical observations; retention 7 days.
+incident-log: false
+# Diagnostic packet/combat monitoring is observation-only.
+packet-diagnostics: true
+# Active translation probes have no validated 26.3 transport and are NOT enabled.

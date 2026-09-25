@@ -1,3 +1,4 @@
+// Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 package ac.grim.grimac.command;
 
 import ac.grim.grimac.command.commands.*;
@@ -42,6 +43,7 @@ public class CloudCommandService implements CommandService {
     public void registerCommands() {
         if (commandsRegistered) return;
         CommandManager<Sender> commandManager = commandManagerSupplier.get();
+        new ac.defender.platform.DefenderCommand().register(commandManager, commandArguments);
         new GrimPerf().register(commandManager, commandArguments);
         new GrimDebug().register(commandManager, commandArguments);
         new GrimAlerts().register(commandManager, commandArguments);

@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # ===========================================================================
 #  Grim datastore
 #
@@ -21,7 +22,7 @@ database:
   # Ana anahtar. False yapıldığında ihlal geçmişi ve /grim history tamamen
   # devre dışı kalır. Canlı AC kontrolleri çalışmaya devam eder; sadece
   # flag'ler kalıcılaştırılmaz.
-  enabled: true
+  enabled: false
 
   # Kategoriler → backend id'leri. Burada kullanılan her farklı id için bir
   # `databases/<id>.yml` dosyası (ilk başlatmada paketlenmiş varsayılanlardan

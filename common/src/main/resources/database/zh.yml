@@ -1,3 +1,4 @@
+# Modified for Defender on 2026-09-25; see release/SOURCE_CHANGES.md.
 # ===========================================================================
 #  Grim 数据存储
 #
@@ -16,7 +17,7 @@ database:
 
   # 主开关。设为 false 将完全禁用违规历史与 /grim history。实时 AC 检查
   # 仍会运行，只是不再持久化 flag。
-  enabled: true
+  enabled: false
 
   # 分类 → 后端 ID。这里出现的每个不同 ID 都需要对应的
   # `databases/<id>.yml`（首次启动时会从内置默认值自动创建），并需要在

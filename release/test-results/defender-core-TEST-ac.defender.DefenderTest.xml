@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ac.defender.DefenderTest" tests="30" skipped="0" failures="0" errors="0" timestamp="2026-09-25T14:30:57.957Z" hostname="5.local" time="0.277">
+  <properties/>
+  <testcase name="[1] 350, 20" classname="ac.defender.DefenderTest" time="0.036"/>
+  <testcase name="[2] 30, 12" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="[3] -1, 20" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="[4] 30, -1" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="timeoutAndProtectionAreNotDetection()" classname="ac.defender.DefenderTest" time="0.002"/>
+  <testcase name="protectedAndSpoofedAreNotBehavior()" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="sustainedMovementBurstIsDiagnostic()" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="independentBehaviorRequiredAndDecays()" classname="ac.defender.DefenderTest" time="0.004"/>
+  <testcase name="sessionBoundedAndRateLimitedAndExpires()" classname="ac.defender.DefenderTest" time="0.009"/>
+  <testcase name="atomicSignatureReplacement()" classname="ac.defender.DefenderTest" time="0.026"/>
+  <testcase name="nonceIsSessionBoundExpiringAndSingleUse()" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="combatRequiresSustainedDistinctTargetsAndHealthyConnection()" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="mismatchedProbeCannotConfirm()" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="badYamlCannotInjectTagsOrBehaviorOrDuplicates()" classname="ac.defender.DefenderTest" time="0.004"/>
+  <testcase name="payloadFuzzNeverLeaksUnboundedOrUnexpectedExceptions()" classname="ac.defender.DefenderTest" time="0.102"/>
+  <testcase name="registrationBounds()" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="doubleCheckUsesFreshChallengeAndRejectsReplay()" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="strictBrandDecoding()" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="[1] 47" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="[2] 765" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="[3] 774" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="[4] 9999" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="loggingEscapesAndRetainsOnlySevenDays(Path)" classname="ac.defender.DefenderTest" time="0.022"/>
+  <testcase name="[1] vanilla, CLIENT" classname="ac.defender.DefenderTest" time="0.003"/>
+  <testcase name="[2] fabric, MOD_LOADER" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="[3] lunarclient, CLIENT" classname="ac.defender.DefenderTest" time="0.0"/>
+  <testcase name="[4] neoforge, MOD_LOADER" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="[5] quilt, MOD_LOADER" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="normalAndBatchedMovementRemainQuiet()" classname="ac.defender.DefenderTest" time="0.001"/>
+  <testcase name="velocityNormalizationIsExplicitAndBrandMatchingIsExact()" classname="ac.defender.DefenderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

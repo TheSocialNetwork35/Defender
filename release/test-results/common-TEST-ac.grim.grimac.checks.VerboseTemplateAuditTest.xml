@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ac.grim.grimac.checks.VerboseTemplateAuditTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-25T14:50:38.060Z" hostname="5.local" time="0.121">
+  <properties/>
+  <testcase name="standInTagsMirrorVerboseCodecs()" classname="ac.grim.grimac.checks.VerboseTemplateAuditTest" time="0.009"/>
+  <testcase name="everyTemplateParses()" classname="ac.grim.grimac.checks.VerboseTemplateAuditTest" time="0.053"/>
+  <testcase name="writeChainsMatchTemplateFieldOrder()" classname="ac.grim.grimac.checks.VerboseTemplateAuditTest" time="0.047"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,6 +1,6 @@
 coordinate	filename	sha256
 ac.grim.grimac:GrimAPI:1.6.0.12	GrimAPI-1.6.0.12.jar	3e47ab8cbc73c5bdb6ba36e0b066f61095361024dd28cea73e0377f2cf963148
-ac.grim.grimac:common:0.1.0-alpha.1	common-0.1.0-alpha.1.jar	73bd80bbae505c453a9a34a9ed8af4375463ba04e74e7595d02d22aab53afac2
+ac.grim.grimac:common:0.1.0-alpha.1	common-0.1.0-alpha.1.jar	c049eaca8a7ccb17f4bd2c90845a2d852d087fe5455787fe06639db9df2c49ed
 ac.grim.grimac:defender-core:0.1.0-alpha.1	defender-core-0.1.0-alpha.1.jar	d3d3b22d53396412f8e6bdd0f0e6ddbfc01e2ace6060d3209e99751e4e9a2f5a
 ac.grim.grimac:grim-bukkit-internal:1.6.0.12	grim-bukkit-internal-1.6.0.12.jar	38d435a222d0ffb9deeb48b703ba4f0c6797160c4f4006a76df221ace65560cf
 ac.grim.grimac:grim-internal:1.6.0.12	grim-internal-1.6.0.12.jar	ae384161058248ca8ae1c16f873f9a6d1032d5b6b628c06c12bb781ab350624d

@@ -40,3 +40,7 @@ GPL/source/attribution audit: original license preserved byte-for-byte, upstream
 Modrinth rules were retrieved on 2026-09-25 (page modified August 13, 2026). Derivative/AI disclosures are drafted. No Modrinth project or version was uploaded; primarily AI-authored new functionality remains an eligibility concern requiring review.
 
 The final committed build was smoke-tested again with fresh plugin configuration; the inherited datastore correctly remained disabled. Git metadata was reconstructed from the pinned upstream checkout in a persistent local cache after macOS blocked mmap of cloud-managed Git objects. No upstream history was rewritten.
+
+## Delivered build identity
+
+Code revision: `5edcb2020828bfa28be2132e98d9b5af20294368`. Final `./gradlew build` succeeded again after that commit (Gradle 9.4.1, Java 21; 47 passing test results). The final artifact retains this source revision in grimac.properties. Later packaging commits contain artifacts/documentation only. SHA256SUMS binds the binary, corresponding source ZIP and dependency source JARs.

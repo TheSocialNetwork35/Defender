@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ac.grim.grimac.manager.datastore.V2InstanceRegistryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-25T14:50:38.196Z" hostname="5.local" time="0.031">
+  <properties/>
+  <testcase name="gracefulShutdownClosesEveryOpenSessionAtTheShutdownTime()" classname="ac.grim.grimac.manager.datastore.V2InstanceRegistryTest" time="0.008"/>
+  <testcase name="liveAndOwnStartupsAreLeftAlone()" classname="ac.grim.grimac.manager.datastore.V2InstanceRegistryTest" time="0.002"/>
+  <testcase name="deadStartupIsRepairedWithOneSessionUpdateAndOneStartupWrite()" classname="ac.grim.grimac.manager.datastore.V2InstanceRegistryTest" time="0.019"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Sept. 25, 2026 4:50:38 PM ac.grim.grimac.manager.datastore.V2InstanceRegistry recoverStartup
+WARNUNG: [grim-datastore] recovered startupId=ceb6275a-6120-4020-bea3-a10c510ecc40 serverName='test' and closed 2 open session(s).
+]]></system-err>
+</testsuite>

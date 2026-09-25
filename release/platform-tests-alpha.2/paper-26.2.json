@@ -1,0 +1,29 @@
+{
+  "platform": "paper",
+  "version": "26.2",
+  "build": 129,
+  "url": "https://fill-data.papermc.io/v1/objects/b1d8f6bfa1b6101fa8e947b53041cb3bdf5540e7b83b6547ca19ba7edefeb083/paper-26.2-129.jar",
+  "sha256": "b1d8f6bfa1b6101fa8e947b53041cb3bdf5540e7b83b6547ca19ba7edefeb083",
+  "plugin_sha256": "f4f7483c483d072bd81ad490fc428c6b69dc79e4ba89a7c4cdec0b18ff9fdc0e",
+  "done": true,
+  "exit_code": 0,
+  "errors": [],
+  "defender_lines": [
+    "- Defender (0.1.0-alpha.2)",
+    "[19:18:14 INFO]: [Defender] Loading server plugin Defender v0.1.0-alpha.2",
+    "[19:18:14 INFO]: [Defender] Loading PacketEvents...",
+    "[19:18:16 INFO]: \u001b[96m[packetevents] \u001b[0mLoaded packetevents v2.14.0+8ca0c18b7-SNAPSHOT for Defender",
+    "[19:18:17 INFO]: [Defender] Enabling Defender v0.1.0-alpha.2",
+    "[19:18:17 INFO]: [Defender] Registering packets...",
+    "[19:18:17 INFO]: [Defender] Registering tick schedulers...",
+    "[19:18:17 INFO]: [Defender] Defender experimental modules enabled; observation only. Upstream: GrimAC.",
+    "[19:18:18 INFO]: [Defender] Registering singular bukkit event... (PistonEvent)",
+    "[19:18:18 INFO]: Defender version \u001b[92m0.1.0-alpha.2\u001b[0m",
+    "Defender: unofficial GrimAC fork with experimental client intelligence and evidence review.",
+    "Website: \u001b[92mhttps://github.com/TheSocialNetwork35/Defender\u001b[0m",
+    "[19:18:18 INFO]: [Defender] Defender configuration and signatures reloaded. Grim configuration uses /grim reload.",
+    "\u001b[37m...r inspect \u001b[4m\u001b[91mNobodyDefenderTest\u001b[0m\u001b[3m\u001b[91m<--[HERE]\u001b[0m",
+    "[19:18:24 INFO]: [Defender] Disabling Defender v0.1.0-alpha.2",
+    "[19:18:24 INFO]: [Defender] Terminating PacketEvents..."
+  ]
+}

@@ -36,3 +36,7 @@ Original README and publishing workflows are preserved under `docs/`; publishing
 The 26.3 code changes between upstream `2.0` and `ver/26.3` are upstream work. Use `git diff 8eb5f2809591c891deb4958bb2927844871e0600 a7378b39f2caa5fd5638a10220624fc14ae62be6` to inspect those separately from Defender's additions.
 
 Defender also disables the inherited database master toggle in all shipped locales by default; operators can explicitly enable upstream persistence. Both upstream and PacketEvents bStats startup are disabled. Existing operator configuration is not silently overwritten.
+
+## Alpha.2
+
+Root version raised to 0.1.0-alpha.2. Bukkit descriptor API floor raised to 1.21.11 and Folia declaration disabled pending runtime/region testing. No detection algorithm changes. Additional platform smoke-test records accompany the release.

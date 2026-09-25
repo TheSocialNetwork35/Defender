@@ -14,7 +14,7 @@ This alpha integrates Grim's `ver/26.3` source branch and builds against PacketE
 
 ## Platforms
 
-A Bukkit/Paper-targeted shaded JAR is built. The inherited Folia adapter remains in source but requires its own runtime and region-thread tests. Fabric projects are disabled by this upstream branch; no Fabric server artifact or compatibility claim is included. Normal clients do not need a Defender mod.
+One shared Bukkit-family JAR targets Paper 1.21.11/26.2/26.3 and Purpur 1.21.11/26.2 for experimental use. See PLATFORM_TESTS.md for startup/reload verification; gameplay support is not fully validated. The inherited Folia adapter remains in source, but Folia loading is disabled in alpha.2 pending runtime and region-thread tests. Fabric projects are disabled by this upstream branch; no Fabric server artifact or compatibility claim is included. Normal clients do not need a Defender mod.
 
 ## Client intelligence
 

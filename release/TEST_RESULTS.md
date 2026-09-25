@@ -1,5 +1,11 @@
 # Verification record — 2026-09-25
 
+## Alpha.2 current build
+
+Code revision `9ffdee692` (full revision in Git); `./gradlew --offline --no-daemon build -Prelease=true` succeeded on Java 21 with 47 tests, zero failures/errors/skips. Final JAR metadata embeds `9ffdee6`. See PLATFORM_TESTS.md for the additional exact-artifact runtime matrix. The remainder below is the historical alpha.1 verification record.
+
+## Alpha.1 historical record
+
 ## Build
 
 `./gradlew build` succeeded for the selected upstream base and for Defender. The final distributable is built with `./gradlew --offline --no-daemon build :bukkit:defenderDependencyInventory -Prelease=true` using Gradle 9.4.1 and Temurin JDK 21.0.12.1+1 on macOS ARM64. Offline mode used the resolved Maven cache; dependency hashes and fetched source artifacts are supplied. `mavenLocalOverride=false` in the final source. A fresh online dependency download was not independently validated in a clean machine.

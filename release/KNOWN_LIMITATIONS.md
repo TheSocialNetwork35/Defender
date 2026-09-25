@@ -13,3 +13,5 @@
 - Folia's upstream TPS API reports NaN: Defender normalizes this to unknown and does not escalate behavioral risk. Regional health integration remains work.
 - PacketEvents 2.14.0-SNAPSHOT and other upstream snapshots are moving dependencies; archive exact artifacts/sources and hashes for release reproducibility.
 - Primarily AI-authored new functionality requires Modrinth eligibility review under the current rules. No approval or publication readiness is claimed.
+
+Alpha.2 declares a minimum API of 1.21.11 and disables Folia loading. Exact Paper/Purpur startup test results are in PLATFORM_TESTS.md; versions between tested points are not implicitly validated.

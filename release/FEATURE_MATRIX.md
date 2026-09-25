@@ -26,6 +26,6 @@ Freecam / ESP | Inherited interaction checks only | Not field-tested | High for 
 Active translation/keybind probes | Lifecycle primitive only; no wire transport | Double-check/replay/timeout/protected unit tests | Unknown; version/resource-pack sensitive | checkclient returns UNSUPPORTED
 defender-client companion | No; optional future module | Nonce primitive only tested | Self-report spoofing unavoidable | No mod IDs/hashes currently collected
 SQL / Discord | Inherited optional facilities | No new integration test | Privacy/configuration concerns | Not Defender-specific implementations; defaults off
-Folia | Adapter source retained | Build only; runtime pending | Regional TPS unavailable | Unknown TPS suppresses Defender risk
+Folia | Adapter source retained; loading disabled in alpha.2 | Runtime pending | Regional TPS unavailable | Requires region-thread validation before enabling
 Fabric server | No distributable in selected branch | Not built or tested | Unknown | Do not list on Modrinth
 Geyser / Floodgate | Inherited Java-check exemption | No actual Bedrock runtime test | Proxy/exemption configuration | Never claim Bedrock movement validation

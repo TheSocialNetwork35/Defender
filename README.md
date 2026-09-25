@@ -37,3 +37,7 @@ All Defender commands require `defender.admin` (operator by default):
 See [upstream README and credits](docs/UPSTREAM_README.md), [LICENSE](LICENSE), [attribution](release/ATTRIBUTION.md), [exact source changes](release/SOURCE_CHANGES.md), [privacy](release/PRIVACY.md), [feature matrix](release/FEATURE_MATRIX.md), and [manual test checklist](release/MANUAL_TESTS.md).
 
 Codex generated the new Defender code, tests and release prose. This is disclosed; no AI visual assets were generated. Modrinth acceptance has not been established. The new fork-specific contribution is primarily AI-generated, so the current Modrinth AI rules are a publication blocker requiring review; disclosure alone does not resolve that rule. No Modrinth upload has been made.
+
+## Alpha.2 runtime targets
+
+One shared JAR targets Paper 1.21.11/26.2/26.3 and Purpur 1.21.11/26.2 for experimental use. Exact startup/reload tests and hashes: [platform report](release/PLATFORM_TESTS.md). Gameplay and false-positive testing remain outstanding. Folia loading is disabled pending regional validation; no Fabric artifact. Set exact Modrinth game versions manually; the declared minimum API is 1.21.11.

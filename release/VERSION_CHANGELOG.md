@@ -1,7 +1,8 @@
-# 0.1.0-alpha.1
+# 0.1.0-alpha.2
 
-Initial experimental Defender fork of GrimAC `ver/26.3`.
+- Raise the declared Bukkit API floor from 1.13 to 1.21.11, matching the oldest selected modern runtime test target. This is not a list of supported Minecraft versions.
+- Disable the inherited Folia support declaration until region-threaded operation has been validated.
+- Test one shared Bukkit-family artifact on selected Paper and Purpur server builds; see PLATFORM_TESTS.md for exact outcomes and checksums.
+- No new cheat checks or additional gameplay guarantees in this version. Previous limitations remain.
 
-Adds passive brand/channel classification from reloadable signatures; separate identification and behavioral risk; bounded session evidence; optional capped JSONL logging; permission-gated Defender commands; observational packet timing and multi-target combat diagnostics; unit-tested probe lifecycle and optional handshake primitives.
-
-Preserves Grim's upstream anti-cheat checks, attribution and GPL license. Disables automatic update requests and brand-only legacy Forge disconnection in supplied defaults. No active translation transport, companion mod, Fabric artifact or production compatibility claim. See TEST_RESULTS.md and MANUAL_TESTS.md.
+This is an experimental alpha. Startup/reload testing does not establish gameplay compatibility or false-positive rates. Set exact tested game versions and loaders manually on Modrinth; automatic detection from plugin.yml is incomplete. No Fabric artifact.

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-09-25T14:50:38.184Z" hostname="5.local" time="0.011">
+<testsuite name="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-09-25T17:17:34.825Z" hostname="5.local" time="0.019">
   <properties/>
-  <testcase name="deadStartupWasLastSeenAtItsFinalLeaseRenew()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.001"/>
-  <testcase name="deadWhenTheLeaseNamesAnotherStartup()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.0"/>
-  <testcase name="aliveWhileTheLeaseNamesTheStartupAndHasNotExpired()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.001"/>
+  <testcase name="deadStartupWasLastSeenAtItsFinalLeaseRenew()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.002"/>
+  <testcase name="deadWhenTheLeaseNamesAnotherStartup()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.001"/>
+  <testcase name="aliveWhileTheLeaseNamesTheStartupAndHasNotExpired()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.0"/>
   <testcase name="heartbeatAgeDecidesWhenOwnershipIsNotEnforced()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.001"/>
   <testcase name="startupWithoutItsOwnLeaseWasLastSeenAtItsNewestOwnStamp()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.0"/>
   <testcase name="refreshRereadsOwnershipOnTheNextVerdict()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.001"/>
   <testcase name="oneOwnershipReadServesEveryStartupOfTheSameInstance()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.001"/>
-  <testcase name="lastSeenNeverPrecedesTheStartupsOwnStamps()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.0"/>
-  <testcase name="deadWhenTheLeaseIsClosed()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.0"/>
-  <testcase name="deadOnceTheLeaseHasExpired()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.0"/>
+  <testcase name="lastSeenNeverPrecedesTheStartupsOwnStamps()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.001"/>
+  <testcase name="deadWhenTheLeaseIsClosed()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.002"/>
+  <testcase name="deadOnceTheLeaseHasExpired()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.001"/>
   <testcase name="deadWithoutAnOwnershipRow()" classname="ac.grim.grimac.manager.datastore.LeaseStartupLivenessTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -1,0 +1,29 @@
+{
+  "platform": "purpur",
+  "version": "26.2",
+  "build": "2633",
+  "url": "https://api.purpurmc.org/v2/purpur/26.2/2633/download",
+  "sha256": "41f7c0535c1cec47ede48d25c8d9bd7f053d4dc44f87293e5a007314dbcfc32c",
+  "plugin_sha256": "f4f7483c483d072bd81ad490fc428c6b69dc79e4ba89a7c4cdec0b18ff9fdc0e",
+  "done": true,
+  "exit_code": 0,
+  "errors": [],
+  "defender_lines": [
+    "- Defender (0.1.0-alpha.2)",
+    "[19:18:49 INFO]: [Defender] Loading server plugin Defender v0.1.0-alpha.2",
+    "[19:18:49 INFO]: [Defender] Loading PacketEvents...",
+    "[19:18:52 INFO]: \u001b[96m[packetevents] \u001b[0mLoaded packetevents v2.14.0+8ca0c18b7-SNAPSHOT for Defender",
+    "[19:18:52 INFO]: [Defender] Enabling Defender v0.1.0-alpha.2",
+    "[19:18:52 INFO]: [Defender] Registering packets...",
+    "[19:18:52 INFO]: [Defender] Registering tick schedulers...",
+    "[19:18:52 INFO]: [Defender] Defender experimental modules enabled; observation only. Upstream: GrimAC.",
+    "[19:18:52 INFO]: [Defender] Registering singular bukkit event... (PistonEvent)",
+    "[19:18:53 INFO]: Defender version \u001b[92m0.1.0-alpha.2\u001b[0m",
+    "Defender: unofficial GrimAC fork with experimental client intelligence and evidence review.",
+    "Website: \u001b[92mhttps://github.com/TheSocialNetwork35/Defender\u001b[0m",
+    "[19:18:53 INFO]: [Defender] Defender configuration and signatures reloaded. Grim configuration uses /grim reload.",
+    "\u001b[37m...r inspect \u001b[4m\u001b[91mNobodyDefenderTest\u001b[0m\u001b[3m\u001b[91m<--[HERE]\u001b[0m",
+    "[19:18:58 INFO]: [Defender] Disabling Defender v0.1.0-alpha.2",
+    "[19:18:58 INFO]: [Defender] Terminating PacketEvents..."
+  ]
+}
